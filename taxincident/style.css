@@ -1,0 +1,137 @@
+/* Add this if numbers for A/B get too wide, otherwise reuse existing CSS */
+.equations span#param-a,
+.equations span#param-b {
+    min-width: 80px; /* Adjust as needed */
+    display: inline-block;
+    text-align: right;
+}
+
+/* Add some styling for the note */
+.equations small {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Reusing existing styles from previous response */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.control-group {
+    margin: 10px;
+    min-width: 250px; /* Minimum width for each control group */
+    flex: 1; /* Allow groups to grow */
+    text-align: center; /* Center content within group */
+}
+
+.control-group label {
+    display: block; /* Make label take full width */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #34495e;
+}
+.control-group small {
+    display: block;
+    font-size: 0.85em;
+    color: #7f8c8d;
+    margin-top: 4px;
+}
+
+
+.control-group input[type="range"] {
+    width: 80%; /* Adjust slider width */
+    cursor: pointer;
+}
+
+#plot {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.results, .equations {
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.results h2, .equations h2 {
+    text-align: left;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.results p, .equations p {
+    margin: 8px 0;
+    font-size: 1.05em; /* Slightly larger text */
+}
+
+.results span, .equations span {
+    font-weight: bold;
+    color: #e74c3c; /* Highlight values */
+    font-family: monospace; /* Use monospace for numbers */
+}
+
+.results span {
+    display: inline-block; /* Ensure spans align well */
+    min-width: 70px; /* Minimum width for alignment */
+    text-align: right; /* Right-align numbers */
+    padding-right: 10px; /* Spacing */
+}
+
+
+code {
+    background-color: #ecf0f1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column; /* Stack controls vertically */
+        align-items: center; /* Center items */
+    }
+    .control-group {
+        width: 90%; /* Take more width on smaller screens */
+        margin-bottom: 15px;
+    }
+    .control-group input[type="range"] {
+        width: 100%; /* Full width slider */
+    }
+}

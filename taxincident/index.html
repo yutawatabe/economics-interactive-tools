@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tax Incidence</title>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Interactive Tax Incidence Visualization</h1>
+
+    <div class="controls">
+        <div class="control-group">
+            <!-- Changed min to 0, updated text -->
+            <label for="omega">Inverse Supply Elasticity (ω): <span id="omega-value">1.0</span></label>
+            <input type="range" id="omega" min="0" max="3" step="0.1" value="1.0">
+            <small>(ω=0: Perf. Elastic, Higher ω: Less Elastic)</small>
+        </div>
+        <div class="control-group">
+            <label for="sigma">Demand Elasticity (σ): <span id="sigma-value">1.5</span></label>
+            <input type="range" id="sigma" min="0.1" max="5" step="0.1" value="1.5">
+             <small>(Higher σ means more elastic demand)</small>
+        </div>
+         <div class="control-group">
+            <label for="tau">Ad Valorem Tax (τ): <span id="tau-value">0.10</span></label>
+            <input type="range" id="tau" min="0" max="1" step="0.01" value="0.1">
+             <small>(e.g., 0.1 = 10% tax)</small>
+        </div>
+    </div>
+
+    <div id="plot"></div>
+
+    <div class="results">
+        <h2>Equilibrium Results:</h2>
+        <p>Target Pre-Tax Quantity (q*): <span id="q-target"></span></p>
+        <p>Target Pre-Tax Price (p*): <span id="p-target"></span></p>
+        <hr>
+        <p>Post-Tax Quantity (q_tax): <span id="q-post"></span></p>
+        <p>Price Consumers Pay (p_d): <span id="pd-post"></span></p>
+        <p>Price Producers Receive (p_s): <span id="ps-post"></span></p>
+        <p>Tax Revenue: <span id="tax-revenue"></span></p>
+        <p>Consumer Tax Burden (%): <span id="consumer-burden"></span></p>
+        <p>Producer Tax Burden (%): <span id="producer-burden"></span></p>
+    </div>
+
+    <div class="equations">
+        <h2>Model Equations & Parameters:</h2>
+        <p>Inverse Supply: <code>p_s = A * q<sup>ω</sup></code></p>
+        <p>Demand: <code>q = B * p_d<sup>-σ</sup></code></p>
+        <p>Tax Wedge: <code>p_d = p_s * (1 + τ)</code></p>
+        <!-- Updated to show dynamic A and B -->
+        <p>Calculated Parameters (to keep pre-tax equilibrium stable):</p>
+        <p style="margin-left: 15px;"><code>A = <span id="param-a"></span></code></p>
+        <p style="margin-left: 15px;"><code>B = <span id="param-b"></span></code></p>
+         <small><i>Note: A and B are adjusted based on ω and σ to maintain the target pre-tax equilibrium, isolating the elasticity effect on tax incidence.</i></small>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
