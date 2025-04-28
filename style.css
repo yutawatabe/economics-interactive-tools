@@ -1,0 +1,76 @@
+/* Basic Reset or Normalize (Optional but good practice) */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Use a common, readable font */
+    line-height: 1.6; /* Improve readability */
+    margin: 0; /* Remove default body margin */
+    padding: 20px; /* Add some padding around content */
+    background-color: #f8f8f8; /* Light grey background */
+    color: #333; /* Dark grey text */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    min-height: 100vh; /* Minimum height to ensure centering */
+}
+
+.container {
+    max-width: 800px; /* Limit the width of content */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    background-color: #fff; /* White background for the content area */
+    padding: 30px;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text within the container */
+}
+
+h1 {
+    color: #0056b3; /* A shade of blue for the heading */
+    margin-bottom: 20px;
+    font-size: 2em; /* Larger heading */
+}
+
+p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+li {
+    margin-bottom: 15px; /* Space between list items */
+}
+
+li:last-child {
+    margin-bottom: 0; /* No bottom margin on the last item */
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Standard blue link color */
+    font-size: 1.2em; /* Slightly larger font for links */
+    padding: 10px 15px; /* Add padding around the clickable area */
+    border: 1px solid #007bff; /* Add a border */
+    border-radius: 5px; /* Rounded corners for buttons/links */
+    display: inline-block; /* Allows padding and margin */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+a:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #0056b3; /* Darker blue border on hover */
+}
+
+/* Optional: Add a footer */
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+}
